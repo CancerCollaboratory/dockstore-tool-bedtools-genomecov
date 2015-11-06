@@ -9,4 +9,5 @@ RUN make -j 2
 WORKDIR / 
 RUN cp ./bedtools2/bin/bedtools ./ 
 RUN strip bedtools
+ENV PATH /:$PATH
 ENTRYPOINT ["/bedtools", "genomecov"]
