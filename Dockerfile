@@ -10,4 +10,4 @@ WORKDIR /
 RUN cp ./bedtools2/bin/bedtools ./ 
 RUN strip bedtools
 ENV PATH /:$PATH
-ENTRYPOINT ["/bedtools", "genomecov"]
+ENTRYPOINT ["bedtools", "genomecov"]
