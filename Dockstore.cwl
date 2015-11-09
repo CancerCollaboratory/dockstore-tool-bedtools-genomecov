@@ -9,6 +9,11 @@ description: |
   Summary: Compute the coverage of a feature file among a genome.
   Usage: bedtools genomecov [OPTIONS] -i <bed/gff/vcf> -g <genome>
 
+dct:creator:
+  "@id": "http://orcid.org/0000-0002-7681-6415"
+  foaf:name: Brian O'Connor
+  foaf:mbox: "mailto:briandoconnor@gmail.com"
+
 requirements:
   - class: ExpressionEngineRequirement
     id: "#node-engine"
