@@ -1,7 +1,8 @@
 #!/usr/bin/env cwl-runner
 
 class: CommandLineTool
-
+id: "bedtools-genomecov"
+label: "bedtools-genomecov"
 description: |
   Tool:    bedtools genomecov (aka genomeCoverageBed)
   Sources: https://github.com/arq5x/bedtools2
