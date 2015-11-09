@@ -14,7 +14,7 @@ requirements:
     requirements:
     - class: DockerRequirement
       dockerPull: commonworkflowlanguage/nodejs-engine
-      engineCommand: cwlNodeEngine.js
+    engineCommand: cwlNodeEngine.js
   - class: EnvVarRequirement
     envDef:
     - envName: "PATH"
