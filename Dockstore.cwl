@@ -15,10 +15,6 @@ requirements:
     - class: DockerRequirement
       dockerPull: commonworkflowlanguage/nodejs-engine
     engineCommand: cwlNodeEngine.js
-  - class: EnvVarRequirement
-    envDef:
-    - envName: "PATH"
-      envValue: "/usr/local/bin/:/usr/bin:/bin"
   - class: DockerRequirement
     dockerPull: quay.io/collaboratory/dockstore-tool-bedtools-genomecov
 
