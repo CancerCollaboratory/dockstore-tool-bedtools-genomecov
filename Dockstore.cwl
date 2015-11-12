@@ -10,6 +10,13 @@ description: |
   Usage: bedtools genomecov [OPTIONS] -i <bed/gff/vcf> -g <genome>
 
 dct:creator:
+  "@id": "http://orcid.org/0000-0001-9102-5681"
+  foaf:name: "Andrey.Kartashov / Cincinnati Children’s Hospital Medical Center"
+  foaf:mbox: "mailto:Andrey.Kartashov@cchmc.org"
+
+dct:description: "Developed for CWL consortium http://commonwl.org/ Original URL: https://github.com/common-workflow-language/workflows"
+
+dct:contributor:
   "@id": "http://orcid.org/orcid.org/0000-0002-6130-1021"
   foaf:name: Denis Yuen
   foaf:mbox: "mailto:help@cancercollaboratory.org"
