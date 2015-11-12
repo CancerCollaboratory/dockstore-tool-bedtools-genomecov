@@ -11,10 +11,10 @@ description: |
 
 dct:creator:
   "@id": "http://orcid.org/0000-0001-9102-5681"
-  foaf:name: "Andrey.Kartashov / Cincinnati Children’s Hospital Medical Center"
+  foaf:name: "Andrey Kartashov"
   foaf:mbox: "mailto:Andrey.Kartashov@cchmc.org"
 
-dct:description: "Developed for CWL consortium http://commonwl.org/ Original URL: https://github.com/common-workflow-language/workflows"
+dct:description: "Developed at Cincinnati Children’s Hospital Medical Center for the CWL consortium http://commonwl.org/ Original URL: https://github.com/common-workflow-language/workflows"
 
 dct:contributor:
   "@id": "http://orcid.org/orcid.org/0000-0002-6130-1021"
