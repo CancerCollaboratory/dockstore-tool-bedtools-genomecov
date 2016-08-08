@@ -3,6 +3,8 @@
 class: CommandLineTool
 id: "bedtools-genomecov"
 label: "bedtools-genomecov"
+cwlVersion: cwl:draft-3
+
 description: |
   Tool:    bedtools genomecov (aka genomeCoverageBed)
   Sources: https://github.com/arq5x/bedtools2
