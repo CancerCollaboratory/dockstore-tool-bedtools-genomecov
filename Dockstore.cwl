@@ -3,7 +3,7 @@
 class: CommandLineTool
 id: "bedtools-genomecov"
 label: "bedtools-genomecov"
-cwlVersion: cwl:draft-3
+cwlVersion: draft-3
 
 description: |
   Tool:    bedtools genomecov (aka genomeCoverageBed)
@@ -24,14 +24,9 @@ dct:contributor:
   foaf:mbox: "mailto:help@cancercollaboratory.org"
 
 requirements:
-  - class: ExpressionEngineRequirement
-    id: "#node-engine"
-    requirements:
-    - class: DockerRequirement
-      dockerPull: commonworkflowlanguage/nodejs-engine
-    engineCommand: cwlNodeEngine.js
   - class: DockerRequirement
     dockerPull: quay.io/collaboratory/dockstore-tool-bedtools-genomecov
+  - class: InlineJavascriptRequirement
 
 inputs:
   - id: "#input"
@@ -42,21 +37,18 @@ inputs:
       or <bed/gff/vcf>
     inputBinding:
       position: 1
-      secondaryFiles:
-        - engine: "#node-engine"
-          script: |
-           {
-            if ((/.*\.bam$/i).test($job['input'].path))
-               return {"path": $job['input'].path+".bai", "class": "File"};
-            return [];
-           }
-      valueFrom:
-        engine: "#node-engine"
-        script: |
-          {
-            var prefix = ((/.*\.bam$/i).test($job['input'].path))?'-ibam':'-i';
-            return [prefix,$job['input'].path];
+      valueFrom: |
+          ${
+            var prefix = ((/.*\.bam$/i).test(inputs.input.path))?'-ibam':'-i';
+            return [prefix,inputs.input.path];
           }
+      secondaryFiles: | 
+          ${
+            if ((/.*\.bam$/i).test(inputs.input.path))
+               return {"path": inputs.input.path+".bai", "class": "File"};
+            return [];
+          }
+
 
   - id: "#genomeFile"
     type: File
@@ -66,8 +58,6 @@ inputs:
       position: 2
       prefix: "-g"
 
-#  - id: "#dept"
-#    type: ["null","depts"]
   - id: "#dept"
     type:
       name: "JustDepts"
@@ -155,14 +145,9 @@ outputs:
   - id: "#genomecoverage"
     type: File
     description: "The file containing the genome coverage"
-    outputBinding:
-      glob: 
-        engine: cwl:JsonPointer
-        script: /job/genomecoverageout
-stdout: 
-  engine: cwl:JsonPointer
-  script: /job/genomecoverageout
+    outputBinding: 
+      glob: $(inputs.genomecoverageout)
 
-
+stdout: $(inputs.genomecoverageout)
 
 baseCommand: ["bedtools", "genomecov"]
