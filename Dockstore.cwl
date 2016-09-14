@@ -25,7 +25,7 @@ dct:contributor:
 
 requirements:
   - class: DockerRequirement
-    dockerPull: quay.io/collaboratory/dockstore-tool-bedtools-genomecov
+    dockerPull: quay.io/collaboratory/dockstore-tool-bedtools-genomecov:0.3
   - class: InlineJavascriptRequirement
 
 inputs:
