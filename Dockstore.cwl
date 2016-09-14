@@ -17,7 +17,7 @@ dct:contributor:
   foaf:mbox: mailto:help@cancercollaboratory.org
 requirements:
 - class: DockerRequirement
-  dockerPull: quay.io/collaboratory/dockstore-tool-bedtools-genomecov
+  dockerPull: quay.io/collaboratory/dockstore-tool-bedtools-genomecov:1.0
 - class: InlineJavascriptRequirement
 
 inputs:
